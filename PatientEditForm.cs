@@ -37,11 +37,6 @@ namespace Lab2_EF
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtSnils.Text) || string.IsNullOrWhiteSpace(txtFio.Text))
-            {
-                MessageBox.Show("Заполните СНИЛС и ФИО!");
-                return;
-            }
 
             CurrentPatient.Snils = txtSnils.Text.Trim();
             CurrentPatient.Fio = txtFio.Text.Trim();

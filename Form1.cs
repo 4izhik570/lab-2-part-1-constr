@@ -48,7 +48,7 @@ namespace Lab2_EF
             if (dgvPatients.CurrentRow == null) return;
 
             // Получаем СНИЛС выбранного пациента
-            string snils = dgvPatients.CurrentRow.Cells["Snils"].Value.ToString()!;
+            string snils = dgvPatients.CurrentRow.Cells["Snils"].Value.ToString();
             var patient = _db.Patients.Find(snils);
 
             if (patient != null)
@@ -106,13 +106,13 @@ namespace Lab2_EF
                 // 4. Проекция (Select): выбираем только нужные столбцы для таблицы
                 .Select(x => new
                 {
-                    СНИЛС = x.patient.Snils,
-                    ФИО = x.patient.Fio,
-                    Пол = x.patient.Pol,
-                    ДатаРождения = x.patient.Birthdate,
-                    Улица = x.street.Name,
-                    Дом = x.patient.HouseNum,
-                    Участок = x.area.Id
+                    SNILS = x.patient.Snils,
+                    FIO = x.patient.Fio,
+                    Pol = x.patient.Pol,
+                    DateOfBirth = x.patient.Birthdate,
+                    Street = x.street.Name,
+                    House = x.patient.HouseNum,
+                    Area = x.area.Id
                 })
                 .ToList();
 
